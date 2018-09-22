@@ -1,4 +1,4 @@
-***For loops should use a locally defined var***
+# For loops should use a local var
 
 For loop construction is very optimized in Go and for loops are everywhere.
 
