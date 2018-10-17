@@ -1,18 +1,9 @@
-# For loops should use a local var
+# Benchmarking good practices
 
-For loop construction is very optimized in Go and for loops are everywhere.
+To avoid bad habits, it is useful to benchmark them against the compiler.
 
-The most efficient loop is using a locally defined variable.
-
-**Results**
-
-```
-goos: windows
-goarch: amd64
-BenchmarkForGlobalVar-4           500000              2568 ns/op
-BenchmarkForLocalVar-4           2000000               574 ns/op
-PASS   
-```
+- The most efficient loop is using a [locally defined variable](./src/forbreak/README.md)
+- Don't bother to use anything but the len() to get the [size of an array](./src/lenarray/README.md)
 
  
  
