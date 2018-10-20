@@ -2,13 +2,6 @@ package lenarray
 
 import "testing"
 
-/*
-goos: windows
-goarch: amd64
-BenchmarkLenOfArray-4             200000              6147 ns/op
-BenchmarkLenOfArrayVar-4          200000              6316 ns/op
-PASS
-*/
 func TestLenOfArray(t *testing.T) {
 	want := 999
 	if got := LenOfArray(); got != want {

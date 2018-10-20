@@ -4,6 +4,8 @@ Len() for an array is as efficient as any other method.
 
 Keeping a separate variable in math functions for instance has no use.
 
+`src>go test -bench=. ./lenarray`
+
 **Results**
 
 ```

@@ -4,6 +4,8 @@ For loop construction is very optimized in Go and for loops are everywhere.
 
 The most efficient loop is using a locally defined variable.
 
+`src>go test -bench=. ./forbreak` 
+
 **Results**
 
 ```
