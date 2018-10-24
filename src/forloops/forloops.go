@@ -1,4 +1,4 @@
-package forbreak
+package forloops
 
 // Effect of global var on for loop
 func ForLocalVar() (res int) {

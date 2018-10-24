@@ -1,4 +1,4 @@
-package forbreak
+package forloops
 
 import "testing"
 
