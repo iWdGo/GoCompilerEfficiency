@@ -20,6 +20,7 @@ func FindString(s string) (b bool) {
 func FindStringRange(s string) bool {
 	for _, c := range vArray { //range cannot be used as range does not return bool for &&
 		if strings.HasPrefix(s, c) {
+			// TODO iso return close to the end, leave for ending naturally
 			return true
 		}
 	}

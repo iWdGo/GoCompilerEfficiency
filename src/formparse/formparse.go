@@ -1,4 +1,4 @@
-package singleexit
+package formparse
 
 import (
 	"html/template"
