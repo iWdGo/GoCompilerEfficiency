@@ -1,13 +1,28 @@
 package singleexit
 
-import "testing"
+import (
+	"strings"
+	"testing"
+)
 
 var testcases = []struct {
 	want   bool
 	search string
 }{
+	{true, "alpha"},
 	{true, "bingo"},
+	{true, "cause"},
+	{true, "daemon"},
+	{true, "enola"},
+	{true, "finder"},
+	{true, "goal"},
+	{true, "helio"},
+	{true, "iota"},
+	{true, "jolien"},
+	{true, "kilo"},
 	{true, "long"},
+	{true, "mono"},
+	{true, "nano"}, // last found
 	{false, "zorro"},
 }
 
@@ -25,48 +40,34 @@ func TestFindStringRange(t *testing.T) {
 		}
 	}
 }
-
-// TODO Signature of generic benchmark is rejected
-/*
-func BenchmarkFindString(b *testing.B, s string) {
-	for n := 0; n < b.N; n++ {
-		FindString(s)
+func BenchmarkMain(b *testing.B) {
+	for _, c := range testcases {
+		b.Run(c.search+"/while", BenchmarkFind)
+		b.Run(c.search+"/range", BenchmarkFind)
 	}
 }
+func BenchmarkFind(b *testing.B) {
+	s := strings.SplitAfter(b.Name(), "/")
+	// because BenchMarkFind is called w/o suffix with >go test -bench=.
+	if len(s) == 3 {
+		if s[2] == "while" {
+			for n := 0; n < b.N; n++ {
+				FindString(s[1])
+			}
+		} else {
+			for n := 0; n < b.N; n++ {
+				FindStringRange(s[1])
+			}
+		}
+	} else {
+		// Benchmark name has no suffix
+	}
+}
+
+/*
 func BenchmarkFindStrings(b *testing.B) {
 	for _, c := range testcases {
-		BenchmarkFindString(b, c.search)
+		BenchmarkFindString(b, c.search) // signature is rejected
 	}
 }
 */
-// w/o the for loop, no benchmarking occurs because of optimization
-func BenchmarkFindStringShort(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		FindString("bingo")
-	}
-}
-func BenchmarkFindStringRangeShort(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		FindStringRange("bingo")
-	}
-}
-func BenchmarkFindStringLong(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		FindString("long")
-	}
-}
-func BenchmarkFindStringRangeLong(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		FindStringRange("long")
-	}
-}
-func BenchmarkFindStringNotFound(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		FindString("zorro")
-	}
-}
-func BenchmarkFindStringRangeNotFound(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		FindStringRange("zorro")
-	}
-}

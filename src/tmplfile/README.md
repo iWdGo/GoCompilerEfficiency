@@ -1,11 +1,9 @@
 # Parsing form
 
-Parsing a form using .Parseform requires to build a template.
-This template which has no internal logic has to be build on every request.
-
+Loading template from a file is costly.
 It is worth holding it in a global var only for this purpose.
 
-`src>go test -bench=. ./templates` 
+`src>go test -bench=. ./tmplfiles` 
 
 **Results**
 ```
