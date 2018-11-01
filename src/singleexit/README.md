@@ -1,4 +1,4 @@
-#Single exit
+# Single exit
 
 In a helper, you might consider to have a single exit point for clarity purpose.
 This structure produces overly complex code easily replaced by `range`.

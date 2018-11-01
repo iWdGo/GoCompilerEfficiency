@@ -11,6 +11,8 @@ To avoid bad habits, it is useful to benchmark them against the compiler.
 ***Templates***
 - Keep a global [template to parse forms](src/formparse/README.md)
 - Keep a global var to hold a [template read from file](src/tmplfile/README.md)
- 
+
+***Buffers***
+- No difference when [writing to file](src/tofile/README.md) 
  
  
