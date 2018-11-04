@@ -1,4 +1,4 @@
-package firstitem
+package arrayinit
 
 import "testing"
 

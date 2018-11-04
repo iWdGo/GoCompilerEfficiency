@@ -1,4 +1,4 @@
-package firstitem
+package arrayinit
 
 // Luckily, it is only 10 items...
 func InitArrayStatic() []int {
