@@ -8,6 +8,7 @@ To avoid bad habits, it is useful to benchmark them against the compiler.
 - Don't duplicate code to handle the [first item of a list](./src/firstitem/README.md)
 - Don't try to [keep a single exit](./src/singleexit/README.md)
 - Always use [shadowing inside a for loop](./src/isvalid/README.md) even for a boolean
+- Don't bother about [irrelevant cases](./src/switch/README.md) in a switch 
 
 ***Arrays***
 - [Array of struct](./src/arraysstruct/README.md) is as efficient as multiple arrays.
