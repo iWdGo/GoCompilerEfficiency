@@ -14,12 +14,11 @@ To avoid bad habits, it is useful to benchmark them against the compiler.
 - [Array of struct](./src/arraysstruct/README.md) is as efficient as multiple arrays.
 - [Array initialization](./src/arrayinit/README.md) using append is costly.
 
-
 ***Templates***
 - Keep a global [template to parse forms](src/formparse/README.md)
 - Keep a global var to hold a [template read from file](src/tmplfile/README.md)
 
 ***Buffers***
 - No difference when [writing to file](src/tofile/README.md) 
- 
+- [Returning a buffer](src/returnbuffer/README.md) as a string is marginally more expensive.
  
