@@ -10,6 +10,9 @@ To avoid bad habits, it is useful to benchmark them against the compiler.
 - Always use [shadowing inside a for loop](./src/isvalid/README.md) even for a boolean
 - Don't bother about [irrelevant cases](./src/switch/README.md) in a switch 
 
+***Math***
+- math.Log2() is the most efficient to check that 2 is the [sole divisor](./src/switch/README.md). 
+
 ***Arrays***
 - [Array of struct](./src/arraysstruct/README.md) is as efficient as multiple arrays.
 - [Array initialization](./src/arrayinit/README.md) using append is costly.
