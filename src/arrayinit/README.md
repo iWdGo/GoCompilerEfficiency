@@ -5,9 +5,12 @@ Initializing an array can be:
 - with a known length and make
 - using append
 
+Comparison is unfair but sheds some light on the cost.
+The most efficient is obviously static. 
+Append is extending the array and x5 the make().
+
 The method may depend on your app requirement and/or practical constraints.
 
-The most efficient is obviously static. It appears that append is costly.
 
 `src>go test -bench=. ./arrayinit` 
 

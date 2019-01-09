@@ -9,8 +9,8 @@ You need to maintain related data using an ordinary string key:
 
 **Results**
 
-Arrays are slightly the faster.
-An array of struct has a similar performance with the advantage of stronger typing.
+Arrays are slightly faster.
+Performance of an array of struct is similar with the advantage of stronger typing.
 The map is 30% more expensive.
 
 ```
