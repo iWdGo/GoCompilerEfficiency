@@ -1,6 +1,7 @@
 # Benchmarking good practices
 
-To avoid bad habits, it is useful to benchmark them against the compiler.
+Go is [strong typed and object oriented](./src/forloops/README.md) by definition.
+To distinguish bad habits, benchmarking against the compiler performance is often convincing.
 
 ***Logic***
 - The most efficient loop is using a [locally defined variable](./src/forloops/README.md)

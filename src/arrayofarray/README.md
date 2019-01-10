@@ -6,7 +6,6 @@ The array is defined as:
 - []t
 - tt where a method is used
 
-Go is strong typed and object oriented.
 Using a method is the most efficient even if difference can be small.
 
 `src>go test -bench=. ./arrayofarray`
