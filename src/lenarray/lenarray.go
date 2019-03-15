@@ -19,10 +19,10 @@ func LenOfArrayVar() (res int) {
 	la := 1
 	for i := 1; i < 1000; i++ {
 		a = append(a, la)
-		if len(a) != i+1 {
+		if la != i {
 			fmt.Println("check you code")
 		}
 		la++
 	}
-	return a[len(a)-1] // compiler cannot optimize the full loop
+	return a[la-1] // compiler cannot optimize the full loop
 }

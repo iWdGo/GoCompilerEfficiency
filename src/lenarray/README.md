@@ -2,17 +2,15 @@
 
 Len() for an array is as efficient as any other method.
 
-Keeping a separate variable in math functions for instance has no use.
-
 `src>go test -bench=. ./lenarray`
 
 **Results**
 
 ```
-goos: windows
-goarch: amd64
-BenchmarkLenOfArray-4             200000              6147 ns/op
-BenchmarkLenOfArrayVar-4          200000              6316 ns/op
+go version go1.12 windows/amd64
+
+BenchmarkLenOfArray-4             200000              6096 ns/op
+BenchmarkLenOfArrayVar-4          300000              5916 ns/op
 PASS   
 ```
 

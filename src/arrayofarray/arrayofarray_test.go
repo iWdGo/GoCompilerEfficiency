@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	inc  = 1
+	inc  = 10
 	want = 10 * size
 )
 

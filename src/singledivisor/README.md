@@ -15,14 +15,14 @@ Algorithms:
 **Results**
 
 ```
-go version go1.11.4 windows/amd64
+go version go1.12 windows/amd64
 
-BenchmarkIs2SingleDivLog-4              100000000               14.4 ns/op
-BenchmarkIs2SingleDivShift-4            100000000               15.9 ns/op
-BenchmarkIs2SingleDivDivision-4         100000000               18.4 ns/op
-BenchmarkIsSingleDivLog-4               50000000                37.2 ns/op
-BenchmarkIs2SingleDivBig-4              10000000               142 ns/op
-BenchmarkIsSingleDivDivision-4          10000000               175 ns/op
+BenchmarkIs2SingleDivLog-4              100000000               10.8 ns/op
+BenchmarkIs2SingleDivShift-4            100000000               13.4 ns/op
+BenchmarkIs2SingleDivDivision-4         100000000               15.0 ns/op
+BenchmarkIsSingleDivLog-4               30000000                36.7 ns/op
+BenchmarkIs2SingleDivBig-4              20000000                70.8 ns/op
+BenchmarkIsSingleDivDivision-4          10000000               173 ns/op
 PASS   
 ```
 

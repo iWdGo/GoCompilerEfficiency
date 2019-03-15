@@ -7,10 +7,10 @@ No difference between a string and *bytes.Buffer.
 
 **Results**
 ```
-goos: windows
-goarch: amd64
-BenchmarkStringToFile-4              300           4887857 ns/op
-BenchmarkBufferToFile-4              300           4717306 ns/op
+go version go1.12 windows/amd64
+
+BenchmarkStringToFile-4             3000            411431 ns/op
+BenchmarkBufferToFile-4             3000            423128 ns/op
 PASS
 ```
  

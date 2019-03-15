@@ -14,10 +14,10 @@ Performance of an array of struct is similar with the advantage of stronger typi
 The map is 30% more expensive.
 
 ```
-go version go1.11.2 windows/amd64
+go version go12 windows/amd64
 
-BenchmarkArrays-4                5000000               331 ns/op
-BenchmarkArrayStructs-4          5000000               345 ns/op
-BenchmarkMapStructs-4            3000000               464 ns/op
+BenchmarkArrays-4                5000000               285 ns/op
+BenchmarkArrayStructs-4          5000000               300 ns/op
+BenchmarkMapStructs-4            3000000               413 ns/op
 PASS
 ```

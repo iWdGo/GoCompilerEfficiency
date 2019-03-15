@@ -18,11 +18,12 @@ you don't need to bother.
 **Results**
 
 ```
-go version go1.11.2 windows/amd64
-BenchmarkCheckValueFuncVar-4    20000000                82.5 ns/op
-BenchmarkCheckValueIfVar-4      20000000               113 ns/op
-BenchmarkCheckValueForFunc-4    10000000               107 ns/op
-BenchmarkCheckValueForIf-4      20000000                97.7 ns/op
+go version go1.12 windows/amd64
+
+BenchmarkCheckValueFuncVar-4    20000000                80.3 ns/op
+BenchmarkCheckValueIfVar-4      20000000                82.2 ns/op
+BenchmarkCheckValueForFunc-4    20000000                88.9 ns/op
+BenchmarkCheckValueForIf-4      20000000                85.3 ns/op
 PASS
 ```
  
