@@ -1,3 +1,4 @@
+// Arrayinit initializes an array in various ways including the unfair static method
 package arrayinit
 
 // Array is known
