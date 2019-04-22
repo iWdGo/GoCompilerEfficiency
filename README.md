@@ -1,3 +1,6 @@
+[![GoDoc](https://godoc.org/github.com/iWdGo/GoCompilerEfficienty?status.svg)](https://godoc.org/github.com/iWdGo/GoCompilerEfficienty)
+[![Go Report Card](https://goreportcard.com/badge/github.com/iwdgo/GoCompilerEfficienty)](https://goreportcard.com/report/github.com/iwdgo/GoCompilerEfficienty)
+
 # Benchmarking good practices
 
 Go is [strong typed and object oriented](./src/forloops/README.md) by definition.
