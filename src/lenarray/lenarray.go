@@ -2,8 +2,8 @@ package lenarray
 
 import "fmt"
 
-// Effect of global var on for loop
-func LenOfArray() (res int) {
+// Global var
+func lenOfArray() (res int) {
 	a := make([]int, 1)
 	for i := 1; i < 1000; i++ {
 		a = append(a, len(a))
@@ -14,7 +14,8 @@ func LenOfArray() (res int) {
 	return a[len(a)-1] // compiler cannot optimize the full loop
 }
 
-func LenOfArrayVar() (res int) {
+// Local var
+func lenOfArrayVar() (res int) {
 	a := make([]int, 1)
 	la := 1
 	for i := 1; i < 1000; i++ {

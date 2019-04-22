@@ -9,7 +9,7 @@ func isPositive(a int) bool {
 }
 
 func CheckValueFuncVar(test []int) (s []int) {
-	b := false
+	b := false // default value is assigned automatically
 	if b = isValidValue(test[0]); b && isPositive(test[0]) {
 		s = append(s, test[0])
 	}
@@ -47,7 +47,7 @@ func CheckValueIfVar(test []int) (s []int) {
 	return
 }
 func CheckValueForFunc(test []int) (s []int) {
-	b := false
+	b := false // default value is assigned automatically
 	for _, v := range test {
 		if b = isValidValue(v); b && isPositive(v) {
 			s = append(s, v)

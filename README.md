@@ -1,4 +1,4 @@
-[![GoDoc](https://godoc.org/github.com/iWdGo/GoCompilerEfficienty?status.svg)](https://godoc.org/github.com/iWdGo/GoCompilerEfficienty)
+[![GoDoc](https://godoc.org/github.com/iWdGo/GoCompilerEfficienty?status.svg)](https://godoc.org/github.com/iWdGo/GoCompilerEfficiency)
 [![Go Report Card](https://goreportcard.com/badge/github.com/iwdgo/GoCompilerEfficienty)](https://goreportcard.com/report/github.com/iwdgo/GoCompilerEfficienty)
 
 # Benchmarking good practices
