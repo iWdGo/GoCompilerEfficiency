@@ -28,7 +28,7 @@ To distinguish bad habits, benchmarking against the compiler performance is ofte
 ***Buffers***
 - No difference when [writing to file](src/tofile/README.md) 
 - [Returning a buffer](src/returnbuffer/README.md) as a string is marginally more expensive.
-- Using io is more efficient for to [write a simple string](src/writestring/README.md).
+- Package io is more efficient than fmt to [write a simple string](src/writestring/README.md).
 
 ***Builder***
 - No difference for a url builder between [returning the string or the url.URL](src/urlbuilder/README.md).
