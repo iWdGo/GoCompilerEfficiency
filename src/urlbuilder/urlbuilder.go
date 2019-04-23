@@ -1,3 +1,4 @@
+// urlbuilder evaluates any difference between returning a url using the type or a string
 package urlbuilder
 
 import "net/url"
