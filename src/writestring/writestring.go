@@ -26,3 +26,5 @@ func ioWriteString(s string) *bytes.Buffer {
 	}
 	return b
 }
+
+// TODO using defaunt print() after re-directing StdOut
