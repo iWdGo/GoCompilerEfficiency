@@ -12,11 +12,12 @@ Returning a string from the buffer is marginally more expensive as expected.
 **Results**
 
 ```
-go version go1.12 windows/amd64
+go version go1.12.6 windows/amd64
 
-BenchmarkReturnBuffer-4                   300000              4390 ns/op
-BenchmarkReturnBufferString-4             300000              4584 ns/op
-BenchmarkReturnBufferBytes-4              300000              4380 ns/op
+pkg: github.com/iWdGo/GoCompilerEfficiency/src/returnbuffer
+BenchmarkReturnBuffer-4                   300000              4367 ns/op
+BenchmarkReturnBufferString-4             300000              4570 ns/op
+BenchmarkReturnBufferBytes-4              300000              4360 ns/op
 PASS
 ```
  

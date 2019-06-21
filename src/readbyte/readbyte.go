@@ -18,9 +18,9 @@ func fillBuffer(f int) *bytes.Buffer {
 	b := new(bytes.Buffer)
 	for i := 1; i <= f; i++ {
 		if c, err := fmt.Fprintf(b, "%s%d", filling, i); err != nil {
-			fmt.Println("filling buffer failed")
+			log.Fatalf("filling buffer failed")
 		} else if c != len(filling)+len(strconv.Itoa(i)) {
-			fmt.Printf("incomplete sentence written (*bytes.Buffer): got %d, want %d\n", c, len(filling))
+			log.Fatalf("incomplete sentence written (*bytes.Buffer): got %d, want %d\n", c, len(filling))
 		}
 	}
 	if b.Len() != want {

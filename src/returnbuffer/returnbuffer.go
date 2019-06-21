@@ -10,7 +10,8 @@ const filling = "Filling the buffer "
 
 func ReturnBuffer(f int) *bytes.Buffer {
 	b := new(bytes.Buffer)
-	for i := 1; i < f; i++ {
+	for i := 1; i <= f; i++ {
+		// Any error will return a smaller buffer than expected
 		if c, err := fmt.Fprint(b, filling, i); err != nil {
 			fmt.Println("filling buffer failed")
 		} else if c != len(filling)+len(strconv.Itoa(i)) {
@@ -22,7 +23,8 @@ func ReturnBuffer(f int) *bytes.Buffer {
 
 func ReturnBufferString(f int) string {
 	b := new(bytes.Buffer)
-	for i := 1; i < f; i++ {
+	for i := 1; i <= f; i++ {
+		// Any error will return a smaller buffer than expected
 		if c, err := fmt.Fprint(b, filling, i); err != nil {
 			fmt.Println("filling buffer failed")
 		} else if c != len(filling)+len(strconv.Itoa(i)) {
@@ -34,7 +36,8 @@ func ReturnBufferString(f int) string {
 
 func ReturnBufferBytes(f int) []byte {
 	b := new(bytes.Buffer)
-	for i := 1; i < f; i++ {
+	for i := 1; i <= f; i++ {
+		// Any error will return a smaller buffer than expected
 		if c, err := fmt.Fprint(b, filling, i); err != nil {
 			fmt.Println("filling buffer failed")
 		} else if c != len(filling)+len(strconv.Itoa(i)) {
