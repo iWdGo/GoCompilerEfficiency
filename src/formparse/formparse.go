@@ -22,3 +22,8 @@ func FormParse(w http.ResponseWriter, r *http.Request) (v string) {
 	}
 	return r.FormValue("value")
 }
+
+func FormParseImplicit(w http.ResponseWriter, r *http.Request) (v string) {
+	// Parsing is internal
+	return r.FormValue("value")
+}

@@ -7,7 +7,7 @@ Each byte (`bg`) can be read using:
 When treating every byte, `ReadByte` provides 20%+ improvement.
 One less variable is part of the explanation.
 
-`src>go test -bench=. ./returnbyte` 
+`src>go test -bench=. ./readbyte` 
 
 **Results**
 

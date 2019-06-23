@@ -7,34 +7,35 @@ import (
 	"testing"
 )
 
-const want = "example"
-
-func TestFormParse(t *testing.T) {
+func newRequest(s string) (*httptest.ResponseRecorder, *http.Request) {
 	w := httptest.NewRecorder()
 	r, err := http.NewRequest("POST", "/", http.NoBody)
 	if err != nil {
 		log.Fatal(err)
 	}
 	r.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	r.ParseForm()
-	r.Form.Set("value", "example")
+	_ = r.ParseForm()
+	r.Form.Set("value", s)
+	return w, r
+}
 
-	if got := FormParse(w, r); got != want {
+func TestFormParse(t *testing.T) {
+	want := t.Name()
+	if got := FormParse(newRequest(want)); got != want {
 		t.Fatalf("got %s, want %s", got, want)
 	}
 }
 
 func TestFormParseGlobal(t *testing.T) {
-	w := httptest.NewRecorder()
-	r, err := http.NewRequest("POST", "/", http.NoBody)
-	if err != nil {
-		log.Fatal(err)
+	want := t.Name()
+	if got := FormParseGlobal(newRequest(want)); got != want {
+		t.Fatalf("got %s, want %s", got, want)
 	}
-	r.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	r.ParseForm()
-	r.Form.Set("value", "example")
+}
 
-	if got := FormParseGlobal(w, r); got != want {
+func TestFormParseImplicit(t *testing.T) {
+	want := t.Name()
+	if got := FormParseImplicit(newRequest(t.Name())); got != want {
 		t.Fatalf("got %s, want %s", got, want)
 	}
 }
@@ -42,32 +43,26 @@ func TestFormParseGlobal(t *testing.T) {
 // w/o the for loop, no benchmarking occurs because of optimization
 func BenchmarkFormParse(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		w := httptest.NewRecorder()
-		r, err := http.NewRequest("POST", "/", http.NoBody)
-		if err != nil {
-			log.Fatal(err)
-		}
-		r.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-		r.ParseForm()
-		r.Form.Set("value", "example")
-
-		if got := FormParse(w, r); got != want {
+		want := "example"
+		if got := FormParse(newRequest(want)); got != want {
 			b.Fatalf("got %s, want %s", got, want)
 		}
 	}
 }
+
 func BenchmarkFormParseGlobal(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		w := httptest.NewRecorder()
-		r, err := http.NewRequest("POST", "/", http.NoBody)
-		if err != nil {
-			log.Fatal(err)
+		want := "example"
+		if got := FormParseGlobal(newRequest(want)); got != want {
+			b.Fatalf("got %s, want %s", got, want)
 		}
-		r.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-		r.ParseForm()
-		r.Form.Set("value", "example")
+	}
+}
 
-		if got := FormParseGlobal(w, r); got != want {
+func BenchmarkFormParseImplicit(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		want := "example"
+		if got := FormParseImplicit(newRequest(want)); got != want {
 			b.Fatalf("got %s, want %s", got, want)
 		}
 	}
