@@ -21,13 +21,16 @@ To distinguish bad habits, benchmarking against the compiler performance is ofte
 - [Array initialization](./src/arrayinit/README.md) using append is costly.
 
 ***Templates***
-- Keep a global [template to parse forms](src/formparse/README.md)
+- Use [implicit parsing for forms](src/formparse/README.md)
 - Keep a global var to hold a [template read from file](src/tmplfile/README.md)
 
 ***Buffers***
 - No difference when [writing to file](src/tofile/README.md) 
 - [Returning a buffer](src/returnbuffer/README.md) as a string is marginally more expensive.
-- Package io is more efficient than fmt to [write a simple string](src/writestring/README.md).
+- Package io is much more efficient than fmt which offers many more possibilities:
+    - [write a simple string](src/writestring/README.md).
+    - [write a buffer to a buffer](src/writebuffer/README.md).
+- When handling every byte of a buffer, [use ReadByte](src/readbyte/README.md).
 
 ***Builder***
 - No difference for a url builder between [returning the string or the url.URL](src/urlbuilder/README.md).

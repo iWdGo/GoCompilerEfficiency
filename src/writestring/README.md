@@ -1,7 +1,7 @@
-# Printing a string
+# Elementary print of a string
 
-Printing a string using the fmt package is similar than io.WriteString.
-As fmt offers more possibilities, it takes about 3x the cost as io.
+Printing a string using the fmt package is similar to io.WriteString.
+As `fmt` offers more possibilities, it takes about 3x the cost as io.
 
 `src>go test -bench=. ./writestring` 
 
