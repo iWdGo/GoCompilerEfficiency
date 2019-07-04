@@ -13,8 +13,12 @@ const s = "writestring"
 // fmt Package
 func fmtWriteString(s string) *bytes.Buffer {
 	b := new(bytes.Buffer)
+	var err error
 	for _, _ = range s {
-		_, _ = fmt.Fprint(b, s)
+		_, err = fmt.Fprint(b, s)
+		if err != nil {
+			log.Fatalln(err)
+		}
 	}
 	return b
 }
@@ -32,20 +36,15 @@ func ioWriteString(s string) *bytes.Buffer {
 	return b
 }
 
-// bytes Package
-func bytesWriteTo(s string) *bytes.Buffer {
+// buffer package
+func bufferWriteString(s string) *bytes.Buffer {
 	b := new(bytes.Buffer)
-	bs := bytes.NewBufferString(s)
 	var err error
 	for _, _ = range s {
-		_, err = bs.WriteTo(b)
+		_, err = b.WriteString(s)
 		if err != nil {
 			log.Fatalln(err)
 		}
-		// ! the new buffer is (probably) re-used and has to be re-created
-		// Several issues still opened for bytes.NewBufferString()
-		// https://github.com/golang/go/issues?utf8=%E2%9C%93&q=is%3Aissue+newbufferstring
-		bs = bytes.NewBufferString(s)
 	}
 	return b
 }

@@ -1,37 +1,61 @@
 package writebuffer
 
 import (
-	"fmt"
 	"testing"
 )
 
-func TestFmtWriteBuffer(t *testing.T) {
+func TestFmtPrintBuffer(t *testing.T) {
 	if i := bufferFmt(newBuffer()).Len(); i != len(s)*len(s) {
 		t.Fatalf("got %d, want %d\n", i, len(s)*len(s))
 	}
 }
 
-func TestIoWriteBuffer(t *testing.T) {
+func TestBufferWrite(t *testing.T) {
+	if i := bufferWrite(newBuffer()).Len(); i != len(s)*len(s) {
+		t.Fatalf("got %d, want %d\n", i, len(s)*len(s))
+	}
+}
+
+func TestBufferWriteTo(t *testing.T) {
 	if i := bufferWriteTo(newBuffer()).Len(); i != len(s)*len(s) {
-		fmt.Println(bufferWriteTo(newBuffer()))
+		t.Fatalf("got %d, want %d\n", i, len(s)*len(s))
+	}
+}
+
+func TestIoCopyBuffer(t *testing.T) {
+	if i := ioCopyBuffer(newBuffer()).Len(); i != len(s)*len(s) {
 		t.Fatalf("got %d, want %d\n", i, len(s)*len(s))
 	}
 }
 
 // w/o the for loop, no benchmarking occurs because of optimization
-func BenchmarkFmtWriteBuffer(b *testing.B) {
+func BenchmarkFmtPrintBuffer(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		i := bufferFmt(newBuffer()).Len()
-		if i != len(s)*len(s) {
+		if i := bufferFmt(newBuffer()).Len(); i != len(s)*len(s) {
 			b.Logf("got %d, want %d\n", i, len(s)*len(s))
 		}
 	}
 }
 
-func BenchmarkIoWriteBuffer(b *testing.B) {
+func BenchmarkWriteBuffer(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		i := bufferWriteTo(newBuffer()).Len()
-		if i != len(s)*len(s) {
+		if i := bufferWrite(newBuffer()).Len(); i != len(s)*len(s) {
+			b.Logf("got %d, want %d\n", i, len(s)*len(s))
+		}
+	}
+}
+
+func BenchmarkWriteToBuffer(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		if i := bufferWriteTo(newBuffer()).Len(); i != len(s)*len(s) {
+			b.Logf("got %d, want %d\n", i, len(s)*len(s))
+		}
+	}
+}
+
+func BenchmarkIoCopyBuffer(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		if i := ioCopyBuffer(newBuffer()).Len(); i != len(s)*len(s) {
 			b.Logf("got %d, want %d\n", i, len(s)*len(s))
 		}
 	}

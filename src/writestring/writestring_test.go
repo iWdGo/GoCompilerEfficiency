@@ -16,8 +16,8 @@ func TestIoWriteString(t *testing.T) {
 	}
 }
 
-func TestBufferWriteTo(t *testing.T) {
-	if i := bytesWriteTo(s).Len(); i != len(s)*len(s) {
+func TestBufferWriteString(t *testing.T) {
+	if i := bufferWriteString(s).Len(); i != len(s)*len(s) {
 		t.Fatalf("got %d, want %d\n", i, len(s)*len(s))
 	}
 }
@@ -43,7 +43,7 @@ func BenchmarkIoWriteString(b *testing.B) {
 
 func BenchmarkBufferWriteTo(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		i := bytesWriteTo(s).Len()
+		i := bufferWriteString(s).Len()
 		if i != len(s)*len(s) {
 			b.Logf("got %d, want %d\n", i, len(s)*len(s))
 		}
