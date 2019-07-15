@@ -12,6 +12,7 @@ To distinguish bad habits, benchmarking against the compiler performance is ofte
 - Don't try to [keep a single exit](./src/singleexit/README.md)
 - Always use [shadowing inside a for loop](./src/isvalid/README.md) even for a boolean
 - Don't bother about [irrelevant cases](./src/switch/README.md) in a switch 
+- Use [bit masking](./src/bitorif/README.md) instead of a second if 
 
 ***Math***
 - math.Log2() is the most efficient to check that 2 is the [sole divisor](./src/switch/README.md). 
