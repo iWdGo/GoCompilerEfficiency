@@ -1,6 +1,7 @@
 package bitorif
 
 import (
+	"os"
 	"testing"
 )
 
@@ -30,6 +31,15 @@ func TestIsNulNameIf(t *testing.T) {
 	}
 }
 
+func TestIsNulNameLoop(t *testing.T) {
+	if !isNulNameLoop(os.DevNull) {
+		t.Fatalf("os.DevNull was not detected")
+	}
+	if isNulNameLoop(os.DevNull[:len(os.DevNull)-1] + ".") {
+		t.Fatalf("%s is not nul or NUL but was not detected", os.DevNull)
+	}
+}
+
 // w/o the for loop, no benchmarking occurs because of optimization
 func BenchmarkBitMasking(b *testing.B) {
 	for n := 0; n < b.N; n++ {
@@ -39,5 +49,11 @@ func BenchmarkBitMasking(b *testing.B) {
 func BenchmarkSecondIf(b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		isNulNameIf(null)
+	}
+}
+
+func BenchmarkLoop(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		isNulNameLoop(os.DevNull)
 	}
 }

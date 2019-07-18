@@ -1,5 +1,9 @@
 package bitorif
 
+import (
+	"os"
+)
+
 func isNulNameBit(name string) bool {
 	if name[0]|0x20 != 'n' {
 		return false
@@ -22,6 +26,17 @@ func isNulNameIf(name string) bool {
 	}
 	if name[2] != 'l' && name[0] != 'L' {
 		return false
+	}
+	return true
+}
+
+// Because os.DevNull is always ASCII, the bit for uppercase can be omitted
+// This version would work on any OS
+func isNulNameLoop(name string) bool {
+	for i, c := range os.DevNull {
+		if int32(name[i]|0x20) != c|0x20 {
+			return false
+		}
 	}
 	return true
 }
