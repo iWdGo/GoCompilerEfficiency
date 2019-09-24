@@ -18,7 +18,7 @@ go version go1.12.6 windows/amd64
 pkg: github.com/iWdGo/GoCompilerEfficiency/src/writestring
 BenchmarkFmtWriteString-4        1000000              1885 ns/op
 BenchmarkIoWriteString-4         2000000               694 ns/op
-BenchmarkBufferWriteTo-4         3000000               447 ns/op
+BenchmarkBufferWriteString-4     3000000               447 ns/op
 PASS
 ```
  

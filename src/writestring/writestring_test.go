@@ -41,7 +41,7 @@ func BenchmarkIoWriteString(b *testing.B) {
 	}
 }
 
-func BenchmarkBufferWriteTo(b *testing.B) {
+func BenchmarkBufferWriteString(b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		i := bufferWriteString(s).Len()
 		if i != len(s)*len(s) {

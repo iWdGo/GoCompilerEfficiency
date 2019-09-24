@@ -1,8 +1,6 @@
 # Elementary write of a buffer to a buffer
 
 The target is of type *buffer.Bytes and the `buffer` is simply written to it.
-An elementary case is considered. Any formatting or processing makes this benchmark irrelevant.
-This module is using methods writing a `buffer` without conversion.
  - `fmt.Fprint`
  - `Write()` method of buffer package with a conversion to `bytes`
  - `WriteTo()` method of buffer package
